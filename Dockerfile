@@ -17,16 +17,18 @@ RUN apt-get update \
   cmake \
   curl \
   gazebo \
-  libglu1-mesa-dev \
   python3-pydantic \
   ros-humble-gazebo-ros \
+  libglu1-mesa-dev \
   ros-humble-gazebo-ros-pkgs \
   ros-humble-joint-state-publisher \
+  ros-humble-joint-state-publisher-gui \
   ros-humble-robot-localization \
   ros-humble-plotjuggler-ros \
   ros-humble-robot-state-publisher \
   ros-humble-ros2bag \
   ros-humble-rosbag2-storage-default-plugins \
+  ros-humble-imu-tools \
   ros-humble-rqt-tf-tree \
   ros-humble-rmw-fastrtps-cpp \
   ros-humble-rmw-cyclonedds-cpp \
@@ -34,6 +36,9 @@ RUN apt-get update \
   ros-humble-twist-mux \
   ros-humble-usb-cam \
   ros-humble-xacro \
+  ros-humble-navigation2 \
+  ros-humble-nav2-bringup \
+  ros-humble-moveit \
   ruby-dev \
   rviz \
   tmux \
@@ -93,11 +98,3 @@ USER keitheorem
 
 # Switch to root user
 USER root
-
-## Terminal commands
-
-# Run image
-# docker run -it --user keitheorem --network=host --ipc=host -v $PWD/source:/my_source_code my_image
-
-# To run with GUI e.g. rviz2
-# docker run -it --user=keitheorem --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" -v $PWD/docker_ws:/home/$USERNAME/ros2_ws --gpus all r2_foxy
