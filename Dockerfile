@@ -92,9 +92,3 @@ COPY Dockerfile /Dockerfile
 # Set up entrypoint and default command
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
 CMD ["bash"]
-
-# Switch to non-root user
-USER keitheorem
-
-# Switch to root user
-USER root
